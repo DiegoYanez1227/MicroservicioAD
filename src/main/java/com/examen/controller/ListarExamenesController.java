@@ -71,4 +71,12 @@ public class ListarExamenesController {
     	}
         return "No se ha efectuado el añadido del la pregunta "+idPregunta+ " al examen "+idExamen;
     }
+    
+    
+    //http://localhost:8081/examenes/listadoCompletoExamenes
+    @GetMapping("/listadoCompletoExamenes")
+    public List<Examen> allJSON() {
+        // Recupera todos los exámenes desde la base de datos
+        return modelo.recuperarExamenes();
+    }
 }
